@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h2>Калькулятор</h2>
+    <input id="num1"/>
+        <button onclick="operator='+'">+</button>
+        <button onclick="operator='-'">-</button>
+        <button onclick="operator='*'">*</button>
+        <button onclick="operator='/'">:</button>
+    <input id="num2"/>
+    <button onclick="calc()">Посчитать</button>
+    <h4>Результат:</h4>
+    <p id="result"></p>
+    <script>
+        var operator;
+        function calc() 
+        {
+            var result;
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
